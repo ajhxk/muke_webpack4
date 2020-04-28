@@ -16,6 +16,14 @@ module.exports = {
 					limit: 10240
 				}
 			} 
+		},{
+			test: /\.less$/,
+			use: [
+				'style-loader', 
+				'css-loader', 
+				'less-loader',
+				'postcss-loader'
+			]
 		}]
 	},
 	output: {
