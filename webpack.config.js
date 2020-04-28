@@ -1,13 +1,17 @@
 const path = require('path');
-const mode = {
-	dev: 'development',
-	prod: 'production'
-}
 
 module.exports = {
-	mode: mode.dev,
+	mode: 'development',
 	entry: {
 		main: './src/index.js'
+	},
+	module: {
+		rules: [{
+			test: /\.jpg$/,
+			use: {
+				loader: 'file-loader'
+			} 
+		}]
 	},
 	output: {
 		filename: 'bundle.js',
