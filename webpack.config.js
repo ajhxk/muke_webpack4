@@ -20,7 +20,14 @@ module.exports = {
 			test: /\.less$/,
 			use: [
 				'style-loader', 
-				'css-loader', 
+				{
+					loader: 'css-loader', 
+					options: {
+						// 在@import '**.less'文件中 也让它经过postcsss-loader、less-loader处理
+						importLoaders: 2,
+						modules: true
+					}
+				},
 				'less-loader',
 				'postcss-loader'
 			]
