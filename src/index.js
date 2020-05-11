@@ -1,4 +1,4 @@
-var root = document.getElementById('root');
-import './index.less';
+// Tree Shaking 只支持 ES Module
 
-root.innerHTML = '<div class="iconfont icon-changjingguanli"></div>';
+import { add } from './math.js';
+add(1, 2);
